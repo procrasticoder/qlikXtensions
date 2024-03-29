@@ -1,6 +1,6 @@
 define( [ "qlik", "text!./style.css"
 ],
-function ( qlik) {
+function ( qlik, cssContent) {
 	'use strict';
 	$( "<style>" ).html( cssContent ).appendTo( "head" );
 	
@@ -80,8 +80,6 @@ function ( qlik) {
 			const sheetSessionObject = await currentApp.model.engineApp.getObject(currentSheet.sheetId);
  
 			const currentSheetLayout = await sheetSessionObject.getLayout();
-
-			console.log(currentSheetLayout)
 			
 			const allObjectsqIds = await Promise.all(currentSheetLayout.cells.map(async (data)=>{
 				const obj = await currentApp.model.engineApp.getObject(data.name)
