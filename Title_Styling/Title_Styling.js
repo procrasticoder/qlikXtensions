@@ -1,6 +1,6 @@
 define( [ "qlik", "text!./style.css"
 ],
-function ( qlik) {
+function ( qlik, cssContent) {
 	'use strict';
 	$( "<style>" ).html( cssContent ).appendTo( "head" );
 	
